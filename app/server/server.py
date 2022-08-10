@@ -3,6 +3,7 @@ import util
 
 app = Flask(__name__)
 
+
 @app.route('/get_location_names')
 def get_location_names():
     response = jsonify({
@@ -11,6 +12,7 @@ def get_location_names():
     response.headers.add('Access-Control-Allow-Origin', '*')
 
     return response
+
 
 @app.route('/predict_home_price', methods=['POST'])
 def redict_home_price():
@@ -26,8 +28,8 @@ def redict_home_price():
 
     return response
 
+
 if __name__ == '__main__':
     print("Starting Python Flask Server For Home Price Predictions...")
     util.load_saved_artifacts()
     app.run(debug=True)
-

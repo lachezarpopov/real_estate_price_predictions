@@ -1,9 +1,11 @@
-import json, pickle
+import json
+import pickle
 import numpy as np
 
 __locations = None
 __data_columns = None
 __model = None
+
 
 def get_estimated_price(location, sqft, bhk, bath):
     try:
@@ -20,8 +22,10 @@ def get_estimated_price(location, sqft, bhk, bath):
 
     return round(__model.predict([x])[0], 2)
 
+
 def get_location_names():
     return __locations
+
 
 def load_saved_artifacts():
     global __data_columns, __locations, __model
