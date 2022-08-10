@@ -15,7 +15,7 @@ def get_location_names():
 @app.route('/predict_home_price', methods=['POST'])
 def redict_home_price():
     total_sqft = float(request.form['total_sqft'])
-    location = float(request.form['location'])
+    location = request.form['location']
     bhk = float(request.form['bhk'])
     bath = float(request.form['bath'])
 
